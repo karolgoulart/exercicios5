@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+void preenche(int* xs, int n) {
+    for (int i= 1; i<= n; i++) {
+        printf ("Digite um número: ");
+        scanf("%d", xs + i); 
+    }
+}
+
+double media(int* xs, int n) {
+    int soma = 0;
+    for (int i = 0; i < n; i++) {
+        soma += *(xs + i); 
+    }
+    return (double)soma/n;
+}
+
+int main() {
+    int vec[100], n;
+    
+    scanf("%d", &n);      
+    preenche(vec, n);      
+    printf("%.2f\n", media(vec, n)); 
+
+    return 0;
+}
