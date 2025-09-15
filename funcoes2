@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    int vet[5];
+    int i;
+    int I;
+
+    printf("Digite 5 números: \n");
+    for (i = 1; i <= 5; i++) {
+        scanf("%d", vet+i); 
+    }
+
+    printf("Vetor:\n");
+    for (i= 1; i <= 5; i++) {
+        printf("%d \n", *(vet+i));
+    }
+
+
+    printf("Digite o índice do número que deseja remover (1 a 5): ");
+    scanf("%d", &I);
+
+    for (i= I; i< 5; i++) {
+        *(vet+i) = *(vet+i + 1);
+    }
+    *(vet+5) = 0;
+
+    printf("Vetor após o número removido:\n");
+    for (i = 1; i <= 5; i++) {
+        printf("%d \n", *(vet + i));
+    }
+
+    return 0;
+}
